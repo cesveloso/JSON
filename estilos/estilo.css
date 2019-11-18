@@ -1,0 +1,30 @@
+#alunoList {
+    overflow-y: auto;
+    width: 700px;
+}
+#nome {
+    width: 425px;
+}
+#nota {
+    width: 70px;
+}
+#body {
+    background-color: rgba(7, 29, 124, 0.87);
+    color: white;
+}
+.form-group {
+    display: inline-block;
+}
+#endereco {
+    width: 500px;
+}
+#site {
+    width: 300px;
+}
+#telefone {
+    width: 195px;
+}
+#botao{
+    margin: 25px 0 0 360px;
+    background-color: rgba(3, 13, 54, 0.644);
+}

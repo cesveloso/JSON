@@ -1,55 +1,84 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de alunos</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <style type="text/css">
-        #alunoList {
-            height: 250px;
-            overflow-y: auto;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <h1>Lista de Alunos</h1>
-        <form id="formAluno">
-            <input type="hidden" id="idHidden" value="" />
-            <div class="form-group">
-                <label for="nomeId" class="control-label">Nome</label>
-                <input id="nomeId" placeholder="Digite o nome" class="form-control" type="text" />
-            </div>
-            <div class="form-group">
-                <label for="emailId" class="control-label">E-mail</label>
-                <input id="emailId" placeholder="teste@teste.com" class="form-control" type="email" />
-            </div>
-            <div class="form-group">
-                <button id="add-to-list" type="submit" class="btn btn-primary">Adicionar a lista</button>
-                <button id="update-to-list" type="submit" class="btn btn-primary d-none">Atualizar a lista</button>
-            </div>
-        </form>
-        <div id="alunoList">
-            <table class="table-striped" id="alunoTable">
-                <tr>
-                    <th class="col-xs-2"></th>
-                    <th class="col-xs-4">Nome</th>
-                    <th class="col-xs-6">E-mail</th>
-                </tr>
-            </table>
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-    <script src="javascript/main.js"></script>
-</body>
+.<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Lista de alunos</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="estilos/estilo.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    </head>
+        
+    <body id="body">
+        <table style="margin-left: 100px; margin-top: 45px;"> 
+            <tr>
+                <th valign="top">
+                    <div class="container" style="line-height:px">
+                        <h1 style="font-family: 'Raleway', sans-serif;">Lista de Alunos</h1>
+                        <form id="formAluno">
+                            <div>
+                                <input type="hidden" id="idHidden" value="" />
+                                <div class="form-group" id="nome">
+                                    <label for="nomeId" class="control-label">Nome</label>
+                                    <input id="nomeId" placeholder="Digite o nome completo" class="form-control"
+                                        type="text" />
+                                </div>
+                                <div class="form-group" id="nota">
+                                    <label for="notaId" class="control-label">Nota</label>
+                                    <input id="notaId" placeholder="0-10" class="form-control" type="text"/>
+                                </div>                            
+                                <div class="form-group" id="endereco">
+                                    <label for="enderecoId" class="control-label">Endereço</label>
+                                    <input id="enderecoId" placeholder="Digite o endereço" class="form-control"
+                                        type="text" />
+                                </div>
+                                <br>
+                                <div class="form-group" id="site">
+                                    <label for="siteId" class="control-label">E-mail</label>
+                                    <input id="siteId" placeholder="google@google.com" class="form-control" 
+                                    type="text" />
+                                </div>                            
+                                <div class="form-group" id="telefone">
+                                    <label for="telefoneId" class="control-label">Telefone</label>
+                                    <input id="telefoneId" placeholder="(99)9999-9999" class="form-control" 
+                                    type="text" required pattern="^\([1-9]{2}\)[0-9]{4}\-[0-9]{4}$"/>
+                                </div>
+                                <br>
+                                <div class="form-group" id="botao">
+                                    <button id="add-to-list" type="submit" class="btn btn-primary">Adicionar a
+                                        lista</button>
+                                    <button id="update-to-list" type="submit" class="btn btn-primary d-none">
+                                        Atualizar a lista</button>
+                                </div>
+                            </div>
+                        </form>
+                </th>
+                <th valign="top">
+                    <div id="alunoList">
+                        <table class="table-striped" id="alunoTable" style="display: inline-block" ;>
+                            <tr>
+                                <th class="col-xs-2"></th>
+                                <th class="col-xs-4">Nome</th>
+                                <th class="col-xs-6">Nota</th>
+                                <th class="col-xs-6">E-mail</th>
+                                <th class="col-xs-6">Endereço</th>
+                                <th class="col-xs-6">Telefone</th>
+                            </tr>
+                        </table>
+                    </div>
+                    </div>
+                </th>
+            </tr>
+        </table>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+        <script src="javascript/main.js"></script>
+    </body>
 
 </html>
